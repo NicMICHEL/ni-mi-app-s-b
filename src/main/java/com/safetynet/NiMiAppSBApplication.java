@@ -1,6 +1,7 @@
 package com.safetynet;
 
 import com.safetynet.repository.FireStationRepository;
+import com.safetynet.repository.PersonRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.web.exchanges.InMemoryHttpExchangeRepository;
@@ -16,9 +17,11 @@ public class NiMiAppSBApplication implements CommandLineRunner {
 
     // When launching the application, convert the data file data.json to :
     //  - a list of fire stations
+    //  - a list of persons
     @Override
     public void run(String... args) throws Exception {
         FireStationRepository.fireStationDeserializer();
+        PersonRepository.personDeserializer();
     }
 
     @Bean
